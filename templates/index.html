@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-        <title>{{title}}</title>
-    {% else %}
-        <title>Flask blog</title>
-    {% endif %}
-</head>
-<body>
-    <h1>Hellow, AI world!</h1>
+{% extends 'layout.html' %}
+
+{% block body %}
+    
     {% for post in posts %}
-    <h1>{{ post.title }}</h1>
-    <p>By {{ post.author }} on {{ post.date_posted}}</p>
-    <p>{{ post.content }}</p>
-        <!-- {% for post in post_it %}
-            <h1>{{ post.title }}</h1>
-            <p>By {{ post.author }} on {{ post.date_posted}}</p>
-            <p>{{ post.content }}</p>
-        {% endfor %} -->
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }} on {{ post.date_posted}}</p>
+        <p>{{ post.content }}</p>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
